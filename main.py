@@ -1,4 +1,6 @@
 print("Hello world")
 
 def abs():
-    return "this function do nothing"
+    print("this function do nothing")
+
+abs()
