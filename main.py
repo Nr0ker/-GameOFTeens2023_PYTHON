@@ -1,5 +1,4 @@
 from aiogram import *
-from config import TOKEN
 from loader import bot, dp
 
 
