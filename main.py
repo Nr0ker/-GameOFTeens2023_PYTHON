@@ -1,10 +1,13 @@
-import pygame
-print("dance dance dance with my hands")
-print(1)
-print(1)
-def bb():
-    pass
-# изменения
-def while_print():
-    user = input("""Ваш текс: """)
-while_print()
+from aiogram import *
+from config import TOKEN
+from loader import bot, dp
+
+
+
+
+
+
+
+
+
+executor.start_polling(dp, skip_updates=True)
