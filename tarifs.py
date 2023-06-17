@@ -5,13 +5,14 @@ from aiogram.dispatcher import FSMContext
 from first_kb import *
 tarifs = ["ХендМейд", "Вільний лайф", "Смарт лайф", "Просто лайф", "Platinum Лайф", "Шкільний лайф", "Ґаджет", "Смарт сім'я", "Роумінг"]
 
-
+#Стейти - Етапи
 class TarifStatesGroup(StatesGroup):
     handmade = State()
     rouming = State()
     pupils = State()
     unlimited_internet = State()
     unlimited_calls = State()
+    finish = State()
 
 #Питання
 @dp.callback_query_handler(text="tariff_callback")

@@ -2,7 +2,9 @@ import tarifs
 from aiogram import executor, types
 import aiogram
 from aiogram.types import *
-
+import handmake
+import rouming
+import a_lot_of_persons
 from loader import dp, bot
 from set_bot_commands import set_default_commands
 from first_kb import kb

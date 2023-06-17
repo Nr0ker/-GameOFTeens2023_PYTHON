@@ -4,7 +4,8 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 kb = types.InlineKeyboardMarkup(
     inline_keyboard=[
         [types.InlineKeyboardButton(text='Підібрати тариф для вас', callback_data='tariff_callback')],
-        [types.InlineKeyboardButton(text='Інші опції', callback_data='another_callback')]
+        [types.InlineKeyboardButton(text='Інші опції', callback_data='another_callback')],
+
     ]
 )
 
@@ -49,3 +50,32 @@ kb_unlim_callOr_no = types.InlineKeyboardMarkup(
 
     ]
 )
+
+kb_rouming = types.InlineKeyboardMarkup(
+    inline_keyboard=[
+        [types.InlineKeyboardButton(text='Франція роумінг', callback_data='France_call_callback')],
+        [types.InlineKeyboardButton(text="Турція роумінг", callback_data='Turcia_call_callback')],
+        [types.InlineKeyboardButton(text='Польша роумінг', callback_data='Polsha_call_callback')],
+        [types.InlineKeyboardButton(text="Німетчина роумінг", callback_data='Nimetchina_call_callback')],
+        [types.InlineKeyboardButton(text="Італія роумінг", callback_data='Italy_call_callback')]
+
+    ]
+)
+
+kb_pupis = types.InlineKeyboardMarkup(
+    inline_keyboard=[
+        [types.InlineKeyboardButton(text="5 і більше", callback_data='fiveAndMore_people_callback')],
+        [types.InlineKeyboardButton(text="5 і меньше", callback_data='fiveAndLess_people_callback')]
+
+    ]
+)
+
+kb_finish = types.InlineKeyboardMarkup(
+    inline_keyboard=[
+        [types.InlineKeyboardButton(text="Ні", callback_data='No_fin_callback')],
+        [types.InlineKeyboardButton(text="Так", callback_data='yes_fin_callback')]
+
+    ]
+)
+
+
