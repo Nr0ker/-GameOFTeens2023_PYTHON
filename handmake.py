@@ -3,6 +3,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import InputFile
 from loader import dp, bot
 from tarifs import TarifStatesGroup
+from first_kb import *
 
 @dp.callback_query_handler(text="hand_callback", state=TarifStatesGroup.handmade)
 async def hand(message: types.Message, state: FSMContext):
@@ -14,3 +15,6 @@ async def hand(message: types.Message, state: FSMContext):
 
     await bot.send_message(text="ХендМейд \n https://www.lifecell.ua/uk/mobilnij-zvyazok/taryfy/handmade/",
                            chat_id=message.from_user.id)
+    await bot.send_message(text="Ви хочете вибрати ще інший таріф?", chat_id=message.from_user.id,
+                               reply_markup=kb_finish)
+    await TarifStatesGroup.finish.set()
