@@ -1,4 +1,4 @@
-from Game_of_Teens1 import tarifs
+import tarifs
 from aiogram import executor, types
 import aiogram
 from aiogram.types import *
