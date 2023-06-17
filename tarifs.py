@@ -71,13 +71,16 @@ async def fin(message: types.Message):
 
 
 @dp.callback_query_handler(text='No_fin_callback', state=TarifStatesGroup.finish)
-async def fin_No(message: types.Message, state: FSMContext):
-    await bot.send_message(text="Добре до побачення :)!", chat_id=message.from_user.id)
-    await state.reset_state()
+async def fin_No(message: types.Message):
+    await bot.send_message(text="Добре до побачення! Дякую за користування! :)", chat_id=message.from_user.id)
+    await message.reply("Напишіть /start що б почати...")
+    await dp.stop_polling()
+    await bot.close()
 
-@dp.callback_query_handler(text='Yes_fin_callback', state=TarifStatesGroup.finish)
-async def fin_No(message: types.Message, state: FSMContext):
+@dp.callback_query_handler(text='yes_fin_callback', state=TarifStatesGroup.finish)
+async def fin_Yes(message: types.Message, state: FSMContext):
     await bot.send_message(text="Добре!", chat_id=message.from_user.id)
+    await bot.send_message(text=f"Продовжуємо, {message.from_user.full_name}!\n ", chat_id=message.from_user.id , reply_markup=kb)
     await state.reset_state()
 
 
