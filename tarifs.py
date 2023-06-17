@@ -71,11 +71,14 @@ async def fin(message: types.Message):
 
 
 @dp.callback_query_handler(text='No_fin_callback', state=TarifStatesGroup.finish)
-async def fin_No(message: types.Message):
+async def fin_No(message: types.Message, state: FSMContext):
     await bot.send_message(text="Добре до побачення :)!", chat_id=message.from_user.id)
-
+    await state.reset_state()
 
 @dp.callback_query_handler(text='Yes_fin_callback', state=TarifStatesGroup.finish)
-async def fin_No(message: types.Message):
+async def fin_No(message: types.Message, state: FSMContext):
     await bot.send_message(text="Добре!", chat_id=message.from_user.id)
-    await TarifStatesGroup.handmade.set()
+    await state.reset_state()
+
+
+
