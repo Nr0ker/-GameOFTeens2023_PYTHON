@@ -50,19 +50,8 @@ kb_unlim_internetOr_no = types.InlineKeyboardMarkup(
     ]
 )
 
-
-
 kb_unlim_callOr_no = types.InlineKeyboardMarkup(
     inline_keyboard=[
-        [types.InlineKeyboardButton(text='Безліміт', callback_data='unlim_call_callback')],
-        [types.InlineKeyboardButton(text="З лімітом", callback_data='limit_call_callback')],
-
-    ]
-)
-
-kb_unlim_callOr_no2 = types.InlineKeyboardMarkup(
-    inline_keyboard=[
-        [types.InlineKeyboardButton(text='Безліміт', callback_data='unlim_call_callback')],
         [types.InlineKeyboardButton(text="З лімітом", callback_data='limit_call_callback')],
 
     ]
